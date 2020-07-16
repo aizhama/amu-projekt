@@ -15,7 +15,6 @@
       <h2>${message}</h2>
       </#if>
 
-
       <a href="<@spring.url '/taskList'/>">Task List</a>
 
    </body>
