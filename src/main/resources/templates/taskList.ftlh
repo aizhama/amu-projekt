@@ -12,7 +12,6 @@
      <a href="addTask">Add Task</a>
      <br><br>
       <div>
-
          <table border="1">
             <tr>
                <th>First Aufgabe</th>

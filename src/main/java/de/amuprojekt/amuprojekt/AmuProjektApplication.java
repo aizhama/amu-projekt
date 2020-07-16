@@ -1,4 +1,4 @@
-package de.amuprojekt.amuprojekt.repository;
+package de.amuprojekt.amuprojekt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
