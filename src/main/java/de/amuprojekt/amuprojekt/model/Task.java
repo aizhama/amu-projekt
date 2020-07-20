@@ -1,29 +1,27 @@
 package de.amuprojekt.amuprojekt.model;
 
 public class Task {
-    private String firstAufgabe;
-    private String secondAufgabe;
+    private String taskName;
+    private String taskId;
 
     public Task(){
     }
 
-    public Task(String firstAufgabe, String secondAufgabe){
-        this.firstAufgabe = firstAufgabe;
-        this.secondAufgabe = secondAufgabe;
+    public Task(String taskName, String taskId){
+        this.taskName = taskName;
+        this.taskId=taskId;
     }
-    public String getFirstAufgabe(){
-        return firstAufgabe;
+    public String getTaskName(){
+        return taskName;
     }
-    public void setFirstAufgabe(String firstAufgabe)
+    public void setTaskName(String taskName)
     {
-        this.firstAufgabe= firstAufgabe;
+        this.taskName= taskName;
     }
-    public String getSecondAufgabe()
-    {
-        return secondAufgabe;
+    public String getTaskId(){
+        return taskId;
     }
-    public void setSecondAufgabe(String secondAufgabe){
-
-        this.secondAufgabe = secondAufgabe;
+    public void setTaskId(String taskId){
+        this.taskId=taskId;
     }
 }

@@ -1,4 +1,7 @@
 <#import "/spring.ftl" as spring/>
+     <!-- See configuration in WebMvConfig.java -->
+      <link th:href="@{/bootstrap/css/bootstrap.min.css}"
+                rel="stylesheet" media="screen"/>
 
 <!DOCTYPE HTML>
 <html>

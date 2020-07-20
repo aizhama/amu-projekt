@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MyController {
-    private static List<Task> task = new ArrayList<Task>();
+    private static List<Task> tasks = new ArrayList<Task>();
 
     static {
-        task.add(new Task("Aufgabe 1", "Aufgabe 2"));
-        task.add(new Task("Task 1", "Task 2"));
+        tasks.add(new Task("Task 1", "1"));
+        tasks.add(new Task("Task 2", "2"));
     }
     //Injektieren (inject) aus applicatiomn.properties     //Использование аннотации @Value
     //Аннотация @Value используется для чтения значения свойства среды или приложения в коде Java. Синтаксис для чтения значения свойства показан ниже
@@ -43,35 +43,30 @@ public class MyController {
     @RequestMapping(value={"/taskList"}, method= RequestMethod.GET)
     public String taskList(Model model) {
 
-        model.addAttribute("task", task);
-        return "taskList";
-    }
-
-    @RequestMapping(value={"/addTask"}, method = RequestMethod.GET)
-    public String addTaskForm(Model model) {
-
         TaskForm taskForm = new TaskForm();
         model.addAttribute("taskForm", taskForm);
-        return "addTask";
+        model.addAttribute("tasks", tasks);
+        return "taskList";
     }
     //@ModelAttribute is for Data Binding
     //@ModelAttribute - это аннотация, предназначенная для привязки данных, которая в основном используется для связывания полей формы для построения объекта модели
 
-    @RequestMapping(value={"/addTask"}, method=RequestMethod.POST)
-    public String addTaskSave(Model model, //
-                              @ModelAttribute("taskForm")TaskForm taskForm) {
+    @RequestMapping(value={"/taskList"}, method=RequestMethod.POST)
+    public String addTaskSave(Model model, @ModelAttribute("taskForm")TaskForm taskForm) {
 
-        String firstAufgabe = taskForm.getFirstAufgabe();
-        String secondAufgabe = taskForm.getSecondAufgabe();
+        String taskName = taskForm.getTaskName();
+        String taskId = taskForm.getTaskId();
 
-        if (firstAufgabe != null && firstAufgabe.length() > 0//
-                && secondAufgabe != null && secondAufgabe.length() > 0){
-            Task newTask = new Task(firstAufgabe, secondAufgabe);
-            task.add(newTask);
-            return "redirect:/taskList";
+        if(taskName != null && taskName.length() > 0//
+                && taskId != null && taskId.length()>0) {
+            Task newTask = new Task(taskName, taskId);
+            tasks.add(newTask);
+            model.addAttribute("tasks", tasks);
+            model.addAttribute("taskForm", new TaskForm());
+            return "taskList";
         }
         String error = "First Task & Last Task is required";
         model.addAttribute("errorMessage", error);
-        return "addTask";
+        return "taskList";
     }
 }

@@ -1,21 +1,21 @@
 package de.amuprojekt.amuprojekt.form;
 
 public class TaskForm {
-    private String firstAufgabe;
-    private String secondAufgabe;
+    private String taskName;
+    private String taskId;
 
-    public String getFirstAufgabe() {
-        return firstAufgabe;
+    public String getTaskName() {
+        return taskName;
     }
 
-    public void setFirstAufgabe(String firstAufgabe) {
-        this.firstAufgabe = firstAufgabe;
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
-    public String getSecondAufgabe() {
-        return secondAufgabe;
+    public String getTaskId(){
+        return taskId;
     }
-    public void setSecondAufgabe(String secondAufgabe) {
-        this.secondAufgabe = secondAufgabe;
+    public void setTaskId(String taskId){
+        this.taskId = taskId;
     }
 }
