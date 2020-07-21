@@ -17,6 +17,7 @@
           <a class="nav-link active" href="#">AFC Task Planer</a>
           </li>
 
+
           <li class="nav-item">
           <a class="nav-link" href="#">Active IT-DevOps Tasks</a>
           </li>
@@ -37,6 +38,8 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled Tasks </a>
           </li>
 
+          <nav class="navbar navbar-dark bg-primary">
+            <!-- Navbar content -->
           <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -50,17 +53,16 @@
       <div class="sidebar-heading">AFC Tasks </div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Boards</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">New Planner</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">+ New Boards</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">My Tasks</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
       </div>
     </div>
 
 	   <div class="container-fluid">
        <h3>Task Planner</h3>
-       <a href="taskList">To Do</a>
+       <a href="taskList">To Do Today</a>
        <br><br>
           <div>
              <table border="1">
@@ -68,6 +70,18 @@
                    <th>Task Name</th>
                    <th>Task Id</th>
                 </tr>
+
+                <div class="panel-group">
+                  <div class="panel panel-default">
+                    <div class="panel-body">Panel Content</div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-body">Panel Content</div>
+                  </div>
+                </div>
+
+
+
                 <#list tasks as task>
                 <tr>
                    <td>${task.taskName}</td>
