@@ -7,6 +7,7 @@
      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
      crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <link rel="stylesheet" type="text/css"
       href="<@spring.url '/css/style.css'/>"/>
      <link rel="stylesheet" href="css/style.css">
@@ -16,7 +17,6 @@
           <li class="nav-item">
           <a class="nav-link active" href="#">AFC Task Planer</a>
           </li>
-
 
           <li class="nav-item">
           <a class="nav-link" href="#">Active IT-DevOps Tasks</a>
@@ -52,11 +52,13 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">AFC Tasks </div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href= "#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href= "/dashboard"class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">+ New Boards</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">My Tasks</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Papierkorb</a>
       </div>
     </div>
 
@@ -69,38 +71,36 @@
                 <tr>
                    <th>Task Name</th>
                    <th>Task Id</th>
+                   <th>Task Status</th>
                 </tr>
 
                 <div class="panel-group">
                   <div class="panel panel-default">
                     <div class="panel-body">Panel Content</div>
                   </div>
-                  <div class="panel panel-default">
-                    <div class="panel-body">Panel Content</div>
-                  </div>
-                </div>
-
-
 
                 <#list tasks as task>
                 <tr>
                    <td>${task.taskName}</td>
                    <td>${task.taskId}</td>
+                   <td>${task.taskStatus}</td>
+
                 </tr>
                 </#list>
              </table>
           </div>
+
               <div>
               <fieldset>
               <legend>Add Task</legend>
                <form name="tasks" action="" method="POST">
                 Task Name: <@spring.formInput "taskForm.taskName" "" "text"/> <br/>
-                Task Id: <@spring.formInput "taskForm.taskId" "" "text"/> <br/>
+                Task Status: <@spring.formInput "taskForm.taskStatus" "" "text"/> <br/>
                 <input type="submit" value="Add" />
               </form>
               </fieldset>
-
            </div>
+
      </body>
      </head>
   </html>

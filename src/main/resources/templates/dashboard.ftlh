@@ -13,7 +13,7 @@
    </head>
 
    <body>
-      <h1>Welcome to AFC</h1>
+      <h1>Dashboard</h1>
       <#if message??>
       <h2>${message}</h2>
       </#if>
